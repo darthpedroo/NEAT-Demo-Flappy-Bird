@@ -1,0 +1,62 @@
+FITNESS FUNCTION: EVALUA LA MANERAEN LA QUE EVOLUCIONA CADA GENERACION. QUE DETERMINA UNA MEJORA ?
+
+[NEAT]
+
+fitness_criterion = how do we select the bird that goes to the next generation. MAX = select the best bird
+fitnes_threshold = the fitness value of the bird with the highest fitness score, if we hit this threshold the program stops
+reset_on_extinction = if we have a species go extinct do we reset the value?
+
+pop_size is onw of the most important settings
+
+[DefaultGenome]
+
+Every bird is a "Genome"
+Every genome has "Nodes"->los circulitos and "Genes"-> conections
+
+activation_mutate_rate = there is a certain percentage to change the activation function. EJ: if this is set to 1. then every generation will have a rnd actiavtion function
+activation_options = from which function will the activation_mutate_rate pick the rnd activation function
+
+
+# node bias options
+
+bias_max_value          = 30.0
+bias_min_value          = -30.0
+
+These are the range of the bias values, we don't want a 10 million bias
+
+bias_mutate_power       = 0.5
+bias_mutate_rate        = 0.7
+bias_replace_rate       = 0.1
+
+how likely this bias can change
+
+# connection add/remove rates
+conn_add_prob           = 0.5
+conn_delete_prob        = 0.5
+
+How likely are we to add or remvoe a conection
+
+# connection enable options
+enabled_default         = True Every connection is active by default
+enabled_mutate_rate     = 0.01 There is a 1% chance of a connection to be disabled
+
+feed_forward            = True  We are using a feed forward neural network
+initial_connection      = full  We are gona have fully connect layers at start
+
+# node add/remove rates
+node_add_prob           = 0.2
+node_delete_prob        = 0.2
+
+20% chance of adding a new node or deleting a node
+
+# network parameters THIS IS THE DEFAULT CONFIGURATION
+num_hidden              = 0 0 hidden layuers
+num_inputs              = 3 3 input neuron
+num_outputs             = 1 1 output
+
+[DefaultStagnation]
+species_fitness_func = max #We are gonna take the max fitness
+max_stagnation       = 20 #how many generations without increasing fitness, then delete that species1
+species_elitism      = 2 
+
+
